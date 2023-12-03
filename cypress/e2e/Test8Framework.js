@@ -1,5 +1,6 @@
 /// <reference types="Cypress" />
 //import example from '../fixtures/example.json'
+
 describe('Second Test Suite',()=>
 {
     before(function(){
@@ -15,16 +16,14 @@ describe('Second Test Suite',()=>
 it('First Test Case',function () {
     cy.visit('https://rahulshettyacademy.com/angularpractice/')
     cy.get('form input[name="name"]:nth-child(2)').type(this.data.name);
-    cy.get('select').select(this.data.gender)
-
-   
-        
-    
-    
+    cy.get('select').select(this.data.gender)  
+       
     
     
 
     })
+
+
 
 
 })

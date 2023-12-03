@@ -14,5 +14,8 @@ describe('Validation Test', () => {
             cy.get('button.btn.btn-info').eq(index).click()
         }
      })
+
+     cy.get('#navbarResponsive > .navbar-nav > .nav-item > .nav-link').click()
+     
     })
   })
