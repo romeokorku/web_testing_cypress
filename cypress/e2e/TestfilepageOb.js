@@ -33,7 +33,20 @@ productPage.getItem().each(($el, index, $list) => {
 })
 
 productPage.getcheckOutButton().click()
+cy.contains('Checkout').click()
+cy.get('#country').type('India')
+cy.wait(8000)
+cy.get('.suggestions > ul > li > a').click()
+cy.get(".checkbox>label").click()
+cy.wait(9000)
+cy.get('.ng-untouched >.btn').click()   // or u can use this css for the same element input[type="submit"]
+//cy.get('.alert').should('have.text','Success! Thank you! Your order will be delivered in next few weeks :-)') //becuase there are spaces in the text cypress was epecting exact match which in this case did not work. so edit to below command instead.
+cy.get('.alert').then(function(element)
+{
+    const actualText=element.text()
+    expect(actualText.includes("Success")).to.be.true
 
+})
 })
    
 
